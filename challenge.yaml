@@ -1,0 +1,41 @@
+#writing the worflow yaml
+
+
+name: challenge.yaml
+
+on: push
+
+jobs:
+  job1:
+    name: firstjob
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: date +"%Y-%m-%d"
+   job1:
+    name: firstjob
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        run: date +"%Y-%m-%d"
+  job2:
+    name: secondjob
+    runs-on: windows-latest
+    steps:
+      - name: step2
+        run: date +"%Y-%m-%d"
+  job3:
+    name: thirdjob
+    runs-on: macos-latest
+    steps:
+      - name: step3
+        run: date +"%Y-%m-%d"
+  job4:
+    name: fourthjob
+    runs-on: ubuntu-latest
+    needs: [job1, job2, job3]
+    steps:
+      - name: step4
+        run: date +"%Y-%m-%d"
+
+
